@@ -1,0 +1,415 @@
+"""
+CyberConnect GraphQL API Schema
+Source: https://github.com/cyberconnecthq/cyberconnect-docs
+Endpoint: https://api.cybertino.io/connect/
+"""
+
+# ---------------------------------------------------------------------------
+# Scalars
+# ---------------------------------------------------------------------------
+
+scalar Percentage
+scalar Time
+scalar Upload
+
+# ---------------------------------------------------------------------------
+# Interfaces
+# ---------------------------------------------------------------------------
+
+interface Node {
+  id: ID!
+}
+
+# ---------------------------------------------------------------------------
+# Enums
+# ---------------------------------------------------------------------------
+
+enum Network {
+  ETH
+  SOLANA
+}
+
+enum RecommFilter {
+  SOCIAL
+  NFT
+  DEFI
+  GAME
+}
+
+enum Tag {
+  PLAZA
+  FEATURED
+  NFTMARKET
+}
+
+enum Source {
+  MOBILE
+  WEBSITE
+}
+
+enum AuthResponse_Result {
+  SUCCESS
+  AUTHENTICATION_FAILED
+}
+
+enum ConnectResponse_Result {
+  SUCCESS
+  FAILED
+  FOLLOWED
+  UNFOLLOWED
+  INVALID_ADDRESS
+  EMPTY_NAMESPACE
+  INVALID_SIGNATURE
+  INVALID_OPERATION
+  SIGNING_KEY_EXPIRED
+}
+
+enum FollowResponse_Result {
+  SUCCESS
+  FAILED
+  INVALID_ADDRESS
+  AUTHENTICATION_FAILED
+  EMPTY_NAMESPACE
+  FOLLOWED
+}
+
+enum UnFollowResponse_Result {
+  SUCCESS
+  FAILED
+  INVALID_ADDRESS
+  AUTHENTICATION_FAILED
+  EMPTY_NAMESPACE
+  UNFOLLOWED
+}
+
+enum RankingResponse_Result {
+  SUCCESS
+  INVALID_ADDRESS
+}
+
+enum RecommendationResponse_Result {
+  SUCCESS
+  INDEXING
+  NO_RECOMMENDATION
+}
+
+enum GenerateSummaryResponse_Result {
+  SUCCESS
+  FAILED
+  INVALID_ADDRESS
+  AUTHENTICATION_FAILED
+}
+
+enum GetActivationCodeResponse_Result {
+  SUCCESS
+  INVALID_ADDRESS
+  INELIGIBLE
+  INSUFFICIENT_CODE
+}
+
+enum RegisterKeyResponse_Result {
+  SUCCESS
+  FAILED
+}
+
+enum SetAliasResponse_Result {
+  SUCCESS
+  FAILED
+  INVALID_ADDRESS
+  AUTHENTICATION_FAILED
+  EMPTY_NAMESPACE
+  UNFOLLOWED
+}
+
+enum SetProfileResponse_Result {
+  SUCCESS
+  UNSUPPORTED_NETWORK
+  INVALID_ADDRESS
+  AUTHENTICATION_FAILED
+  PROFILE_NOT_EXIST
+}
+
+# ---------------------------------------------------------------------------
+# Input Types
+# ---------------------------------------------------------------------------
+
+input UpdateConnectionInput {
+  fromAddr: String!
+  toAddr: String!
+  namespace: String!
+  signature: String!
+  operation: String!
+  signingKey: String!
+  alias: String
+  network: Network
+}
+
+input RegisterKeyInput {
+  address: String!
+  message: String!
+  signature: String!
+  network: Network
+}
+
+input TagsInput {
+  list: [Tag!]!
+}
+
+# ---------------------------------------------------------------------------
+# Object Types
+# ---------------------------------------------------------------------------
+
+type PageInfo {
+  startCursor: String!
+  endCursor: String!
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+}
+
+type Social {
+  twitter: String!
+}
+
+type Connect {
+  address: String!
+  domain: String!
+  ens: String!
+  avatar: String!
+  alias: String!
+  namespace: String!
+  lastModifiedTime: String!
+  verifiable: Boolean!
+}
+
+type BasicInfoConnection {
+  pageInfo: PageInfo!
+  list: [Connect!]!
+}
+
+type UserIdentity {
+  address: String!
+  domain: String!
+  ens: String!
+  social: Social!
+  avatar: String!
+  joinTime: String!
+  followerCount(namespace: String): Int!
+  followingCount(namespace: String): Int!
+  followings(namespace: String, first: Int, after: String): BasicInfoConnection!
+  followers(namespace: String, first: Int, after: String): BasicInfoConnection!
+  friends(namespace: String, first: Int, after: String): BasicInfoConnection!
+}
+
+type FollowStatus {
+  isFollowed: Boolean!
+  isFollowing: Boolean!
+}
+
+type Popular {
+  address: String!
+  domain: String!
+  ens: String!
+  recommendationReason: String!
+  followerCount: Int!
+  isFollowing: Boolean!
+  avatar: String!
+}
+
+type PopularConnection {
+  pageInfo: PageInfo!
+  list: [Popular!]!
+}
+
+type Ranking {
+  address: String!
+  domain: String!
+  ens: String!
+  avatar: String!
+  followerCount: Int!
+  isFollowing: Boolean!
+  verifiable: Boolean!
+  isP10: Boolean!
+}
+
+type RankingConnection {
+  pageInfo: PageInfo!
+  list: [Ranking!]!
+}
+
+type RankingResponse {
+  result: RankingResponse_Result!
+  data: RankingConnection
+}
+
+type Recommendation {
+  address: String!
+  domain: String!
+  ens: String!
+  avatar: String!
+  recommendationReason: String!
+  followerCount: Int!
+}
+
+type RecommendationConnection {
+  pageInfo: PageInfo!
+  list: [Recommendation!]!
+}
+
+type RecommendationResponse {
+  result: RecommendationResponse_Result!
+  data: RecommendationConnection
+}
+
+type HomePage {
+  userCount: Int!
+  connectionCount: Int!
+}
+
+type Airdrop {
+  name: String!
+  amount: String!
+  value: String!
+}
+
+type Web3EOYSummary {
+  joinTime: Int!
+  airdrops: [Airdrop!]
+  userType: String!
+  keyword: String!
+  greeting: String!
+  keywordUrl: String!
+  recommendations(address: String!): [Recommendation!]
+}
+
+type Web3EOYSummaryEligiblity {
+  eligible: Boolean!
+  imageUrl: String!
+}
+
+type AuthResponse {
+  result: AuthResponse_Result!
+  authToken: String!
+}
+
+type ConnectResponse {
+  result: ConnectResponse_Result!
+}
+
+type FollowResponse {
+  result: FollowResponse_Result!
+}
+
+type UnFollowResponse {
+  result: UnFollowResponse_Result!
+}
+
+type SetAliasResponse {
+  result: SetAliasResponse_Result!
+}
+
+type SetProfileResponse {
+  result: SetProfileResponse_Result!
+}
+
+type RegisterKeyResponse {
+  result: RegisterKeyResponse_Result!
+}
+
+type GetActivationCodeResponse {
+  result: GetActivationCodeResponse_Result!
+  code: String!
+}
+
+type GetEligibilityResponse {
+  isTwitterVerified: Boolean!
+  isFollowerEligible: Boolean!
+}
+
+type GenerateWeb3SummaryResponse {
+  result: GenerateSummaryResponse_Result!
+  imageUrl: String!
+}
+
+# ---------------------------------------------------------------------------
+# Query Type
+# ---------------------------------------------------------------------------
+
+type Query {
+  """Retrieve the identity and social graph data for a given address."""
+  identity(address: String!, network: Network): UserIdentity!
+
+  """Check the follow status between two addresses."""
+  followStatus(fromAddr: String!, toAddr: String!, namespace: String, network: Network): FollowStatus
+
+  """Retrieve the alias set by fromAddr for their connection to toAddr."""
+  followingAlias(fromAddr: String!, toAddr: String!, namespace: String, network: Network): String!
+
+  """Get all addresses that a given address follows."""
+  allFollowings(address: String!, namespace: String): [Connect!]!
+
+  """Get popular addresses filtered by tags with pagination."""
+  popular(fromAddr: String, tags: TagsInput!, network: Network, first: Int, after: String): PopularConnection!
+
+  """Get featured popular addresses."""
+  featured(fromAddr: String, network: Network): [Popular!]!
+
+  """Get ranked addresses by follower count."""
+  rankings(fromAddr: String, first: Int, after: String, network: Network): RankingResponse!
+
+  """Get personalized recommendations for an address."""
+  recommendations(address: String!, filter: RecommFilter, network: Network, first: Int, after: String): RecommendationResponse!
+
+  """Get overall homepage statistics."""
+  homePage(network: Network): HomePage!
+
+  """Get a cryptographic proof of a connection between two addresses."""
+  proof(fromAddr: String!, toAddr: String!, namespace: String, network: Network): String!
+
+  """Get an activation code for an address."""
+  activationCode(address: String!): GetActivationCodeResponse!
+
+  """Check eligibility for web3 end-of-year summary."""
+  web3EOYSummaryEligiblity(address: String!): Web3EOYSummaryEligiblity!
+
+  """Get the web3 end-of-year summary for an address."""
+  web3EOYSummary(address: String!): Web3EOYSummary!
+
+  """Check airdrop eligibility for an address."""
+  getEligibility(address: String!): GetEligibilityResponse!
+}
+
+# ---------------------------------------------------------------------------
+# Mutation Type
+# ---------------------------------------------------------------------------
+
+type Mutation {
+  """Authenticate with a wallet signature to receive a JWT auth token."""
+  auth(address: String!, signature: String!, network: Network): AuthResponse!
+
+  """Create a social graph connection (follow) between two addresses."""
+  connect(input: UpdateConnectionInput!): ConnectResponse!
+
+  """Remove a social graph connection (unfollow) between two addresses."""
+  disconnect(input: UpdateConnectionInput!): ConnectResponse!
+
+  """Set an alias on an existing connection."""
+  alias(input: UpdateConnectionInput!): ConnectResponse!
+
+  """Follow an address with a direct signature (simplified follow mutation)."""
+  follow(fromAddr: String!, toAddr: String!, namespace: String!, signature: String!, network: Network, alias: String): FollowResponse!
+
+  """Unfollow an address."""
+  unfollow(fromAddr: String!, toAddr: String!, namespace: String!, signature: String!, network: Network): UnFollowResponse!
+
+  """Set an alias label on a followed address."""
+  setAlias(fromAddr: String!, toAddr: String!, alias: String!, namespace: String!, signature: String!, network: Network): SetAliasResponse!
+
+  """Update the profile metadata for an address."""
+  setProfile(address: String!, avatar: String, domain: String, twitter: String, signature: String!, network: Network!): SetProfileResponse!
+
+  """Register a signing key for delegated signing operations."""
+  registerKey(input: RegisterKeyInput!): RegisterKeyResponse!
+
+  """Generate a web3 year-in-review summary image."""
+  generateSummary(address: String!, signature: String!, imageContent: String!, source: Source!): GenerateWeb3SummaryResponse!
+}
