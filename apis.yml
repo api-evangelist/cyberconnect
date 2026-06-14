@@ -1,0 +1,123 @@
+name: CyberConnect
+description: CyberConnect is a Web3 social graph protocol that enables developers
+  to build decentralized social applications. It provides GraphQL and SDK-based APIs
+  for accessing social graphs, profiles, followers, connections, and recommendation
+  data across Ethereum and Solana networks. The protocol stores user-generated social
+  data in a decentralized manner, allowing users to truly own their identities, content,
+  and connections.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Web3
+  - Social Graph
+  - Decentralized
+  - GraphQL
+  - Blockchain
+  - Social Network
+  - Identity
+url: https://raw.githubusercontent.com/api-evangelist/cyberconnect/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+apis:
+  - name: CyberConnect GraphQL API
+    description: The CyberConnect GraphQL Indexer API provides precise and flexible
+      queries for social graph data. Developers can query address identities, follower
+      and following lists, social connections between addresses, and get personalized
+      connection recommendations. The API supports Ethereum and Solana networks and
+      uses namespace-based data isolation for multi-tenant applications.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cyberconnect-docs-v2.vercel.app/
+    baseURL: https://api.cybertino.io/connect/
+    tags:
+      - GraphQL
+      - Social Graph
+      - Identity
+      - Followers
+      - Connections
+      - Recommendations
+    properties:
+      - type: Documentation
+        url: https://cyberconnect-docs-v2.vercel.app/
+      - type: GraphiQL
+        url: https://api.cybertino.io/connect/graphiql
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/cyberconnect/refs/heads/main/openapi.yml
+    contact:
+      - FN: CyberConnect Developer Support
+        url: https://discord.com/invite/cyberconnect
+    meta:
+      - name: GraphQL Endpoint
+        value: https://api.cybertino.io/connect/
+      - name: Playground
+        value: https://api.cybertino.io/connect/graphiql
+      - name: Dev Testnet Endpoint
+        value: https://api.cyberconnect.dev/testnet/
+
+  - name: CyberConnect JavaScript SDK
+    description: The CyberConnect JavaScript SDK provides connect and disconnect (follow
+      and unfollow) functions for writing social graph connection data. It encapsulates
+      complex authentication logic with Ceramic Network into simple-to-use functions,
+      supporting Ethereum and Solana blockchains. The SDK uses a namespace system
+      so applications can isolate their social data.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cyberconnect-docs-v2.vercel.app/guides/authentication/api-key
+    baseURL: https://api.cybertino.io/connect/
+    tags:
+      - SDK
+      - JavaScript
+      - Follow
+      - Unfollow
+      - Social Graph
+      - Ethereum
+      - Solana
+    properties:
+      - type: Documentation
+        url: https://cyberconnect-docs-v2.vercel.app/guides/authentication/api-key
+      - type: SDK
+        url: https://www.npmjs.com/package/@cyberlab/cyberconnect
+      - type: GitHubRepository
+        url: https://github.com/cyberconnecthq/js-cyberconnect
+    contact:
+      - FN: CyberConnect Developer Support
+        url: https://discord.com/invite/cyberconnect
+    meta:
+      - name: NPM Package
+        value: '@cyberlab/cyberconnect'
+      - name: Authentication Header
+        value: X-API-KEY
+      - name: Authentication Type
+        value: JWT API Key
+
+common:
+  - type: Website
+    url: https://cyber.co/
+  - type: Documentation
+    url: https://docs.cyber.co/
+  - type: LegacyDocumentation
+    url: https://cyberconnect-docs-v2.vercel.app/
+  - type: GitHubOrganization
+    url: https://github.com/cyberconnecthq
+  - type: Discord
+    url: https://discord.com/invite/cyberconnect
+  - type: Twitter
+    url: https://twitter.com/CyberConnectHQ
+  - type: Blog
+    url: https://cyber.co/blog
+  - type: StarterRepository
+    url: https://github.com/cyberconnecthq/cyberconnect-starter
+  - type: TermsOfService
+    url: https://cyber.co/terms
+  - type: PrivacyPolicy
+    url: https://cyber.co/privacy
+  - type: Forum
+    url: https://forum.cyberconnect.me
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/cyberconnect/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: https://raw.githubusercontent.com/api-evangelist/cyberconnect/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: https://raw.githubusercontent.com/api-evangelist/cyberconnect/refs/heads/main/finops/finops.yml
+maintainers:
+  - FN: API Evangelist
+    url: https://apievangelist.com
+    email: kin@apievangelist.com

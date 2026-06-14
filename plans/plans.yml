@@ -1,0 +1,38 @@
+name: CyberConnect API Plans
+description: CyberConnect operates as an open decentralized protocol. Access to the
+  GraphQL Indexer API is provided via API key (JWT token) obtained through the developer
+  portal. The protocol does not publicly publish tiered pricing for the indexer API;
+  access has historically been available to developers building on the protocol. The
+  CyberAccount SDK and smart contract interactions are subject to standard Ethereum
+  L2 (Cyber L2) gas fees.
+plans:
+  - name: Developer Access
+    description: Free API key access for developers building on the CyberConnect protocol.
+      API keys are JWT tokens used to namespace social data under a specific developer
+      or application. Keys are passed via the X-API-KEY header. This allows applications
+      to isolate their social graph data within their own namespace.
+    url: https://cyberconnect-docs-v2.vercel.app/guides/authentication/api-key
+    pricing:
+      - name: Free
+        description: No published cost for indexer API access. Developers obtain an
+          API key and use it to query and write social graph data.
+        unit: Request
+        price: 0
+        currency: USD
+    features:
+      - Identity queries (address, domain, avatar, social accounts)
+      - Follower and following list queries with pagination
+      - Friend list queries (mutual follows)
+      - Connection status queries between addresses
+      - Personalized follow recommendations
+      - Namespace-isolated data writes
+      - Ethereum and Solana network support
+      - GraphQL Playground access
+notes:
+  - CyberConnect evolved into Cyber L2, a social Ethereum Layer 2 network launched
+    in 2024. The original social graph indexer API may have changed availability.
+  - On-chain actions (profile creation, subscriptions, content NFT minting) require
+    gas fees on the Cyber L2 network.
+  - CyberWallet and Passkey Wallet products are being discontinued as of August 2026.
+  - For current pricing and access, consult https://docs.cyber.co/ or contact the
+    team via Discord.

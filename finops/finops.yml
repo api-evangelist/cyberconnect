@@ -1,0 +1,64 @@
+name: CyberConnect FinOps
+description: CyberConnect's cost model combines free off-chain API access for social
+  graph queries with on-chain transaction costs for mutating state on the Cyber L2
+  network. The protocol is designed to minimize costs through gasless relay options
+  for certain actions, while on-chain profile creation, subscriptions, and content
+  NFT minting incur standard L2 gas fees.
+costs:
+  - name: GraphQL Indexer API
+    description: Querying the CyberConnect GraphQL Indexer API (identity, connections,
+      recommendations) is free with an API key. No per-request fees are charged for
+      read operations.
+    type: Read API Access
+    price: 0
+    currency: USD
+    unit: Request
+  - name: On-Chain Profile Creation
+    description: Creating a CyberProfile (ERC-721 NFT) requires an on-chain transaction
+      on the Cyber L2 network, incurring standard L2 gas fees. Exact costs depend
+      on network congestion and gas prices.
+    type: Blockchain Transaction
+    currency: ETH
+    unit: Transaction
+    notes: Gas fees vary by network conditions on Cyber L2 (OP Stack-based)
+  - name: Subscription NFT Minting
+    description: Subscribing to a profile with a paid subscription triggers minting
+      of a SubscribeNFT on Cyber L2. Costs include any subscription price set by
+      the creator plus gas fees.
+    type: Blockchain Transaction
+    currency: ETH
+    unit: Transaction
+  - name: Content NFT Collection
+    description: Collecting content NFTs published by creators may require paying
+      a price set by the creator (e.g., in $CYBER tokens) plus L2 gas fees.
+    type: Blockchain Transaction
+    currency: CYBER or ETH
+    unit: Transaction
+  - name: Gasless Relay Transactions
+    description: CyberConnect provides gasless transaction relay endpoints for certain
+      actions (posting content, setting avatars, issuing NFTs) to improve user onboarding.
+      These are subsidized by the protocol or application developers.
+    type: Subsidized Transaction
+    price: 0
+    currency: USD
+    unit: Transaction
+token:
+  name: CYBER
+  description: The native governance and utility token of the CyberConnect ecosystem.
+    Used for staking on Cyber L2, paying for content NFT editions set by creators,
+    and participating in governance.
+  networks:
+    - Ethereum Mainnet
+    - Cyber L2 (OP Stack)
+optimization_notes:
+  - Use the GraphQL Indexer for all read operations to avoid on-chain costs.
+  - Leverage gasless relay endpoints for write operations where available.
+  - Batch connection queries using the connections API (up to 5000 addresses) to
+    reduce total API calls.
+  - Use cursor-based pagination efficiently to minimize redundant data fetching.
+  - Monitor $CYBER token staking requirements for Cyber L2 validator participation.
+references:
+  - url: https://docs.cyber.co/
+    description: Official Cyber documentation including L2 network and token info
+  - url: https://cyberconnect-docs-v2.vercel.app/
+    description: CyberConnect V2 developer documentation

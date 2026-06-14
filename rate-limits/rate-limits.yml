@@ -1,0 +1,35 @@
+name: CyberConnect API Rate Limits
+description: CyberConnect does not publicly document specific rate limit thresholds
+  for its GraphQL Indexer API. The API uses API key (JWT token) authentication via
+  the X-API-KEY header to namespace requests per developer or application. Pagination
+  is enforced on list queries with documented maximums.
+limits:
+  - name: Recommendation Query Page Size
+    description: The maximum number of recommendations returned per query page is
+      50 entries. The default page size is 20. Use the first and after parameters
+      for cursor-based pagination.
+    unit: Records per page
+    max: 50
+    default: 20
+    scope: recommendations query
+  - name: Connection Query Address List
+    description: The connections query accepts a maximum of 5000 target addresses
+      in a single request when checking connection status between a source address
+      and multiple target addresses.
+    unit: Addresses per request
+    max: 5000
+    scope: connections query
+  - name: Follower/Following Pagination
+    description: Follower, following, and friend list queries use cursor-based pagination.
+      The first parameter controls page size. Consult pagination documentation for
+      startCursor, endCursor, hasNextPage, and hasPreviousPage fields.
+    unit: Records per page
+    scope: identity query follower/following/friends fields
+notes:
+  - No public documentation exists for overall request rate limits (requests per
+    minute/hour/day) on the CyberConnect GraphQL Indexer API.
+  - API keys are JWT tokens that expire; the token includes an expiration timestamp.
+  - For production rate limit details, contact CyberConnect via Discord at https://discord.com/invite/cyberconnect
+    or consult https://docs.cyber.co/
+  - On-chain transactions via Cyber L2 are subject to standard blockchain throughput
+    and gas constraints.
