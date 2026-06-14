@@ -1,0 +1,112 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "apis": "https://apis.io/vocab/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@type": "Organization",
+  "@id": "https://cyber.co/",
+  "name": "CyberConnect",
+  "description": "CyberConnect is a Web3 social graph protocol that enables developers to build decentralized social applications. It provides GraphQL and SDK-based APIs for accessing social graphs, profiles, followers, connections, and recommendation data across Ethereum and Solana networks.",
+  "url": "https://cyber.co/",
+  "sameAs": [
+    "https://github.com/cyberconnecthq",
+    "https://twitter.com/CyberConnectHQ",
+    "https://discord.com/invite/cyberconnect"
+  ],
+  "knowsAbout": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Web3",
+      "description": "Decentralized web infrastructure built on blockchain technology"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Social Graph",
+      "description": "A data structure mapping social relationships between entities"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "GraphQL",
+      "description": "A query language for APIs that gives clients precise data retrieval capabilities"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Decentralized Identity",
+      "description": "Identity systems where users own and control their own identifiers and credentials"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "CyberConnect API Products",
+    "itemListElement": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://api.cybertino.io/connect/",
+        "name": "CyberConnect GraphQL API",
+        "description": "The CyberConnect GraphQL Indexer API provides precise and flexible queries for social graph data. Developers can query address identities, follower and following lists, social connections between addresses, and get personalized connection recommendations.",
+        "applicationCategory": "WebAPI",
+        "operatingSystem": "Any",
+        "url": "https://cyberconnect-docs-v2.vercel.app/",
+        "featureList": [
+          "Query address identities across Ethereum and Solana",
+          "Retrieve follower and following lists",
+          "Get social connections between addresses",
+          "Personalized connection recommendations",
+          "Namespace-based data isolation for multi-tenant applications",
+          "GraphQL playground at https://api.cybertino.io/connect/graphiql"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://cyber.co/",
+          "category": "API Access"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://www.npmjs.com/package/@cyberlab/cyberconnect",
+        "name": "CyberConnect JavaScript SDK",
+        "description": "The CyberConnect JavaScript SDK provides connect and disconnect (follow and unfollow) functions for writing social graph connection data. It encapsulates complex authentication logic with Ceramic Network into simple-to-use functions, supporting Ethereum and Solana blockchains.",
+        "applicationCategory": "DeveloperApplication",
+        "programmingLanguage": "JavaScript",
+        "url": "https://cyberconnect-docs-v2.vercel.app/guides/authentication/api-key",
+        "downloadUrl": "https://www.npmjs.com/package/@cyberlab/cyberconnect",
+        "codeRepository": "https://github.com/cyberconnecthq/js-cyberconnect",
+        "featureList": [
+          "Follow and unfollow social connections",
+          "Ethereum blockchain support",
+          "Solana blockchain support",
+          "Ceramic Network authentication encapsulation",
+          "Namespace-based social data isolation",
+          "JWT API Key authentication via X-API-KEY header"
+        ]
+      }
+    ]
+  },
+  "subjectOf": [
+    {
+      "@type": "WebSite",
+      "name": "CyberConnect Documentation",
+      "url": "https://cyberconnect-docs-v2.vercel.app/"
+    },
+    {
+      "@type": "WebSite",
+      "name": "Cyber Developer Docs",
+      "url": "https://docs.cyber.co/"
+    }
+  ],
+  "termsOfService": "https://cyber.co/terms",
+  "privacyPolicy": "https://cyber.co/privacy",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "developer support",
+      "url": "https://discord.com/invite/cyberconnect"
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "community",
+      "url": "https://forum.cyberconnect.me"
+    }
+  ]
+}
