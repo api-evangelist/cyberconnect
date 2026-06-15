@@ -93,7 +93,7 @@
       "description": "Celebrates inaugural ecosystem grants program recipients and their innovative projects."
     },
     {
-      "title": "Cyber L2's First Month — Achievements and Initiatives in March",
+      "title": "Cyber L2's First Month \u2014 Achievements and Initiatives in March",
       "date": "2024-03-29",
       "url": "https://cyber.co/article/cyber-l2-s-first-month-achievements-and-initiatives-in-march",
       "description": "Highlights key accomplishments during the first month following Cyber L2's March 8 launch."
@@ -158,5 +158,17 @@
       "url": "https://cyber.co/article/cyber-connect-protocol-building-the-social-graph-infrastructure-for-web-3-0",
       "description": "Foundational announcement of CyberConnect's mission to decentralize social graph ownership and data."
     }
-  ]
+  ],
+  "repo": "cyberconnect",
+  "feeds": [
+    {
+      "source": "https://twitter.com/CyberConnectHQ",
+      "feed_url": "https://twitter.com/CyberConnectHQ",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-06-14T20:42:17Z"
 }
