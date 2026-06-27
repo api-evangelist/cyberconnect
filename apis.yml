@@ -74,7 +74,7 @@ apis:
   properties:
   - type: Documentation
     url: https://cyberconnect-docs-v2.vercel.app/guides/authentication/api-key
-  - type: SDK
+  - type: SDKs
     url: https://www.npmjs.com/package/@cyberlab/cyberconnect
   - type: GitHubRepository
     url: https://github.com/cyberconnecthq/js-cyberconnect
@@ -109,7 +109,7 @@ common:
   url: https://cyber.co/terms
 - type: PrivacyPolicy
   url: https://cyber.co/privacy
-- type: Forum
+- type: Forums
   url: https://forum.cyberconnect.me
 - type: Plans
   url: https://raw.githubusercontent.com/api-evangelist/cyberconnect/refs/heads/main/plans/plans.yml
