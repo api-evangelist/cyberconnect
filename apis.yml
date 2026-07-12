@@ -89,6 +89,8 @@ apis:
   - name: Authentication Type
     value: JWT API Key
 common:
+- type: DomainSecurity
+  url: security/cyberconnect-domain-security.yml
 - type: Website
   url: https://cyber.co/
 - type: Documentation
