@@ -5,7 +5,19 @@ description: CyberConnect is a Web3 social graph protocol that enables developer
   data across Ethereum and Solana networks. The protocol stores user-generated social
   data in a decentralized manner, allowing users to truly own their identities, content,
   and connections.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cyberconnect.png
 tags:
 - Web3
 - Social Graph
