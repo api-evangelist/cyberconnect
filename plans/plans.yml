@@ -40,3 +40,16 @@ notes:
   - CyberWallet and Passkey Wallet products are being discontinued as of August 2026.
   - For current pricing and access, consult https://docs.cyber.co/ or contact the
     team via Discord.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  units: []
+  plans:
+  - name: Developer Access
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
