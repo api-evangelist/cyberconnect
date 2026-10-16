@@ -2,6 +2,13 @@
   "repo": "cyberconnect",
   "feeds": [
     {
+      "source": "https://cyber.co/blog",
+      "feed_url": "https://cyber.co/blog",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
       "source": "https://twitter.com/CyberConnectHQ",
       "feed_url": "https://twitter.com/CyberConnectHQ",
       "title": "",
@@ -9,7 +16,7 @@
       "method": "none"
     }
   ],
-  "fetched": "2026-10-03T12:30:02Z",
+  "fetched": "2026-10-10T13:15:00Z",
   "post_count": 25,
   "agent_pulled": "2026-06-27",
   "feed_nature": "undetermined",
