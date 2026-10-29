@@ -64,41 +64,119 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-CyberConnect is a Web3 social graph protocol that enables developers to build decentralized social applications. The protocol provides GraphQL and SDK-based APIs for accessing social graphs, profiles, followers, connections, and recommendation data across Ethereum and Solana networks. Users own their social identities, content, and connections.
+CyberConnect is a Web3 social graph protocol that enables developers to build decentralized social applications. It provides GraphQL and SDK-based APIs for accessing social graphs, profiles, followers, connections, and recommendation data across Ethereum and Solana networks. The protocol stores user-generated social data in a decentralized manner, allowing users to truly own their identities, content, and connections.
 
-## APIs
+**Areas:** Web3 · Social Graph · Decentralized · GraphQL · Blockchain · Social Network · Identity
 
-### GraphQL Indexer API
+## CyberConnect on APIs.io
 
-- **Endpoint:** `https://api.cybertino.io/connect/`
-- **Playground:** `https://api.cybertino.io/connect/graphiql`
-- **Dev Testnet:** `https://api.cyberconnect.dev/testnet/`
-- **Authentication:** `X-API-KEY` header with JWT API key
+Everything profiled for CyberConnect is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cyberconnect/](https://apis.io/providers/cyberconnect/)** — or go straight to one of the APIs or properties below.
 
-Available queries:
+### APIs (2)
 
-- `identity` - Get address identity, domain (ENS/Solana), avatar, social accounts, follower/following/friend lists
-- `connections` - Check connection status between a source address and up to 5000 target addresses
-- `recommendations` - Get personalized follow suggestions for an address
+- [CyberConnect GraphQL API](https://apis.io/apis/cyberconnect/cyberconnect-graphql-api/) — The CyberConnect GraphQL Indexer API provides precise and flexible queries for social graph data. Developers can query address identities, follower and…
+- [CyberConnect JavaScript SDK](https://apis.io/apis/cyberconnect/cyberconnect-javascript-sdk/) — The CyberConnect JavaScript SDK provides connect and disconnect (follow and unfollow) functions for writing social graph connection data. It encapsulates…
 
-### JavaScript SDK
+### Published properties
 
-- **Package:** `@cyberlab/cyberconnect`
-- **Install:** `npm install @cyberlab/cyberconnect`
-- **GitHub:** https://github.com/cyberconnecthq/js-cyberconnect
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The SDK provides `connect()` and `disconnect()` methods for writing follow/unfollow relationships to the decentralized social graph. It supports Ethereum and Solana and uses namespace-based data isolation.
+#### GraphQL (1)
 
-## Resources
+GraphQL schemas.
 
-- **Developer Docs:** https://cyberconnect-docs-v2.vercel.app/
-- **Current Docs (Cyber L2):** https://docs.cyber.co/
-- **GitHub Org:** https://github.com/cyberconnecthq
-- **Discord:** https://discord.com/invite/cyberconnect
-- **Twitter:** https://twitter.com/CyberConnectHQ
-- **Blog:** https://cyber.co/blog
-- **Starter Project:** https://github.com/cyberconnecthq/cyberconnect-starter
+- [CyberConnect GraphQL API](https://apis.io/graphqls/cyberconnect/cyberconnect-graphql/)
 
-## About
+#### JSON-LD (1)
 
-CyberConnect evolved into Cyber, an Ethereum Layer 2 network (OP Stack, powered by EigenLayer) optimized for social applications and launched on mainnet in 2024. The $CYBER token is used for staking, governance, and content monetization. The CyberAI suite provides crypto intelligence APIs for builders and agents.
+Linked-data contexts for the provider's vocabulary.
+
+- [Apis Context](https://apis.io/jsonld/cyberconnect/apis/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Cyberconnect Domain Security](https://apis.io/security/cyberconnect/cyberconnect-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Plans](https://apis.io/plans/cyberconnect/plans/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Rate Limits](https://apis.io/rate-limits/cyberconnect/rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Finops](https://apis.io/finops/cyberconnect/finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://cyber.co/)
+- [Documentation](https://docs.cyber.co/)
+- [Blog](https://cyber.co/blog)
+- [Terms of service](https://cyber.co/terms)
+- [Privacy policy](https://cyber.co/privacy)
+- [GitHub](https://github.com/cyberconnecthq)
+
+## API Evangelist rating
+
+**Kin Score 23.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 40.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 5.3 |
+
+**Agent readiness 15.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cyberconnect/](https://apis.io/providers/cyberconnect/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for CyberConnect: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cyberconnect/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
